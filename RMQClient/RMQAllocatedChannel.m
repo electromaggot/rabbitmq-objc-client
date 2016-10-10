@@ -382,6 +382,15 @@ completionHandler:(RMQConsumerDeliveryHandler)userCompletionHandler {
     return [self direct:name options:RMQExchangeDeclareNoOptions];
 }
 
+//TJ_KLUDGE:
+- (RMQExchange *)dirent:(NSString *)name options:(RMQExchangeDeclareOptions)options {
+	return [self memoizedExchangeDeclare:name type:@"direct" options:options];
+}
+- (RMQExchange *)dirent:(NSString *)name {
+	return [self dirent:name options:RMQExchangeDeclareNoOptions];
+}
+///TJ
+
 - (RMQExchange *)topic:(NSString *)name options:(RMQExchangeDeclareOptions)options {
     return [self memoizedExchangeDeclare:name type:@"topic" options:options];
 }

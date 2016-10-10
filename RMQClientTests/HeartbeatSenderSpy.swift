@@ -49,12 +49,12 @@
 // under either the MPL or the ASL License.
 // ---------------------------------------------------------------------------
 
-@objc class HeartbeatSenderSpy: NSObject, RMQHeartbeatSender {
+class HeartbeatSenderSpy: NSObject, RMQHeartbeatSender {
     var heartbeatIntervalReceived: NSNumber?
     var stopReceived = false
     var signalActivityReceived = false
 
-    func startWithInterval(intervalSeconds: NSNumber!) -> (() -> Void)! {
+    func start(withInterval intervalSeconds: NSNumber!) -> (() -> Void)! {
         heartbeatIntervalReceived = intervalSeconds
         return {}
     }

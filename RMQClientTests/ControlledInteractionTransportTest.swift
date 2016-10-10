@@ -56,13 +56,13 @@ class ControlledInteractionTransportTest: XCTestCase {
         let transport = ControlledInteractionTransport()
         let contract = RMQTransportContract(transport)
         
-        contract.connectAndDisconnect()
+        _ = contract.connectAndDisconnect()
 
-        dispatch_after(TestHelper.dispatchTimeFromNow(0.05), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            transport
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).asyncAfter(deadline: TestHelper.dispatchTimeFromNow(0.05)) {
+            _ = transport
                 .assertClientSentProtocolHeader()
                 .serverSendsPayload(MethodFixtures.connectionStart(), channelNumber: 1)
         }
-        contract.sendingPreambleStimulatesAConnectionStart()
+        _ = contract.sendingPreambleStimulatesAConnectionStart()
     }
 }

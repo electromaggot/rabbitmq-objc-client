@@ -49,7 +49,7 @@
 // under either the MPL or the ASL License.
 // ---------------------------------------------------------------------------
 
-@objc class ConnectionDelegateSpy : NSObject, RMQConnectionDelegate {
+class ConnectionDelegateSpy : NSObject, RMQConnectionDelegate {
     var lastChannelError: NSError?
     var lastConnectionError: NSError?
     var lastChannelOpenError: NSError?
@@ -60,32 +60,32 @@
     var startingRecoveryConnection: RMQConnection?
     var recoveredConnection: RMQConnection?
 
-    func channel(channel: RMQChannel!, error: NSError!) {
-        lastChannelError = error
+    func channel(_ channel: RMQChannel!, error: Error!) {
+        lastChannelError = error as NSError?
     }
 
-    func connection(connection: RMQConnection!, failedToConnectWithError error: NSError!) {
-        lastConnectionError = error
+    func connection(_ connection: RMQConnection!, failedToConnectWithError error: Error!) {
+        lastConnectionError = error as NSError?
     }
 
-    func connection(connection: RMQConnection!, failedToOpenChannel channel: RMQChannel!, error: NSError!) {
-        lastChannelOpenError = error
+    func connection(_ connection: RMQConnection!, failedToOpenChannel channel: RMQChannel!, error: Error!) {
+        lastChannelOpenError = error as NSError?
     }
 
-    func connection(connection: RMQConnection!, disconnectedWithError error: NSError!) {
+    func connection(_ connection: RMQConnection!, disconnectedWithError error: Error!) {
         disconnectCalled = true
-        lastDisconnectError = error
+        lastDisconnectError = error as NSError?
     }
 
-    func willStartRecoveryWithConnection(connection: RMQConnection!) {
+    func willStartRecovery(with connection: RMQConnection!) {
         willStartRecoveryConnection = connection
     }
 
-    func startingRecoveryWithConnection(connection: RMQConnection!) {
+    func startingRecovery(with connection: RMQConnection!) {
         startingRecoveryConnection = connection
     }
 
-    func recoveredConnection(connection: RMQConnection!) {
+    func recoveredConnection(_ connection: RMQConnection!) {
         recoveredConnection = connection
     }
 }

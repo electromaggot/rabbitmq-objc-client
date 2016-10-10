@@ -56,15 +56,15 @@ class RMQHTTPTest: XCTestCase {
     func testGet() {
         let http = RMQHTTP("http://httpbin.org")
         let actual = http.get("/get")
-        let actualString = String(data: actual, encoding: NSUTF8StringEncoding)
-        XCTAssertEqual("{\n  \"args\"", actualString?.substringToIndex(actualString!.startIndex.advancedBy(10)))
+        let actualString = String(data: actual, encoding: String.Encoding.utf8)
+        XCTAssertEqual("{\n  \"args\"", actualString?.substring(to: actualString!.characters.index(actualString!.startIndex, offsetBy: 10)))
     }
 
     func testDelete() {
         let http = RMQHTTP("http://httpbin.org")
         let actual = http.delete("/delete")
-        XCTAssertNotNil(NSString(data: actual, encoding: NSUTF8StringEncoding)?.rangeOfString("gzip, deflate"),
-                        "Got: \(NSString(data: actual, encoding: NSUTF8StringEncoding))")
+        XCTAssertNotNil(NSString(data: actual, encoding: String.Encoding.utf8)?.range(of: "gzip, deflate"),
+                        "Got: \(NSString(data: actual, encoding: String.Encoding.utf8))")
     }
 
 }

@@ -49,10 +49,10 @@
 // under either the MPL or the ASL License.
 // ---------------------------------------------------------------------------
 
-@objc class FakeWaiterFactory: NSObject, RMQWaiterFactory {
+class FakeWaiterFactory: NSObject, RMQWaiterFactory {
     var waiters: [FakeWaiter] = []
 
-    func makeWithTimeout(timeoutSeconds: NSNumber!) -> RMQWaiter! {
+    func make(withTimeout timeoutSeconds: NSNumber!) -> RMQWaiter! {
         let waiter = FakeWaiter()
         waiters.append(waiter)
         return waiter

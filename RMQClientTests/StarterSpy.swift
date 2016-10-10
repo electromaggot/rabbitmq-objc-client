@@ -49,10 +49,10 @@
 // under either the MPL or the ASL License.
 // ---------------------------------------------------------------------------
 
-@objc class StarterSpy : NSObject, RMQStarter {
+class StarterSpy : NSObject, RMQStarter {
     var startCompletionHandler: (() -> Void)?
 
-    func start(completionHandler: (() -> Void)!) {
+    func start(_ completionHandler: (() -> Void)!) {
         startCompletionHandler = completionHandler
     }
 

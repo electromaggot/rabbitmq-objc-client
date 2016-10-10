@@ -65,13 +65,13 @@ class ConnectionClosureTest: XCTestCase {
                                  channelAllocator: allocator,
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: HeartbeatSenderSpy())
 
         conn.start()
         try! q.step()
-        transport.handshake()
+        _ = transport.handshake()
 
         for _ in 1...channelsToCreateCount {
             conn.createChannel()
@@ -100,7 +100,7 @@ class ConnectionClosureTest: XCTestCase {
         try! q.step()
         try! q.step()
 
-        transport.assertClientSentMethod(MethodFixtures.connectionClose(), channelNumber: 0)
+        _ = transport.assertClientSentMethod(MethodFixtures.connectionClose(), channelNumber: 0)
     }
 
     func testCloseWaitsForCloseOkOnChannelZero() {
@@ -113,7 +113,7 @@ class ConnectionClosureTest: XCTestCase {
                                  channelAllocator: allocator,
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: HeartbeatSenderSpy())
 
@@ -138,7 +138,7 @@ class ConnectionClosureTest: XCTestCase {
                                  channelAllocator: allocator,
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: heartbeatSender)
 
@@ -165,12 +165,12 @@ class ConnectionClosureTest: XCTestCase {
                                  channelAllocator: allocator,
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: heartbeatSender)
         conn.start()
         try! q.step()
-        transport.handshake()
+        _ = transport.handshake()
 
         conn.close()
 
@@ -198,13 +198,13 @@ class ConnectionClosureTest: XCTestCase {
                                  channelAllocator: allocator,
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: heartbeatSender)
 
         conn.start()
         try! q.step()
-        transport.handshake()
+        _ = transport.handshake()
 
         for _ in 1...channelsToCreateCount {
             conn.createChannel()
@@ -245,10 +245,10 @@ class ConnectionClosureTest: XCTestCase {
         let (transport, _, conn, _) = ConnectionWithFakesHelper.connectionAfterHandshake()
 
         transport.delegate = nil // this actually happens in the transport, which is fake here
-        transport.serverSendsPayload(MethodFixtures.connectionClose(), channelNumber: 0)
+        _ = transport.serverSendsPayload(MethodFixtures.connectionClose(), channelNumber: 0)
         
         XCTAssertFalse(transport.isConnected())
-        transport.assertClientSentMethod(MethodFixtures.connectionCloseOk(), channelNumber: 0)
+        _ = transport.assertClientSentMethod(MethodFixtures.connectionCloseOk(), channelNumber: 0)
         XCTAssertEqual(conn, transport.delegate as? RMQConnection)
     }
 

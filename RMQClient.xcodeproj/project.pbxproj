@@ -7,6 +7,187 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E25367B1DA9538400057828 /* JKVValue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE46F91D1CFF47F8009DE49F /* JKVValue.framework */; };
+		9E25367C1DA9538B00057828 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEDB0C01CE3352900005A92 /* Gloss.framework */; };
+		9E25367F1DA956F700057828 /* RMQFramesetValidationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8AD2651CC53B0D00229444 /* RMQFramesetValidationResult.m */; };
+		9E2536801DA956F700057828 /* RMQSynchronizedMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEB514C1CAC7780009F37D2 /* RMQSynchronizedMutableDictionary.m */; };
+		9E2536811DA956F700057828 /* RMQMethodMap.m in Sources */ = {isa = PBXBuildFile; fileRef = AEADA3801C71F59A00012D61 /* RMQMethodMap.m */; };
+		9E2536821DA956F700057828 /* RMQTLSOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDBFF2F1CD8FAF70004DB67 /* RMQTLSOptions.m */; };
+		9E2536831DA956F700057828 /* RMQSemaphoreWaiter.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA8A7701CCA100300371E38 /* RMQSemaphoreWaiter.m */; };
+		9E2536841DA956F700057828 /* RMQMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA45EC41C43C20F00FE1F62 /* RMQMethods.m */; };
+		9E2536851DA956F700057828 /* RMQProtocolHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AE39BDA11C68B105000E7A77 /* RMQProtocolHeader.m */; };
+		9E2536861DA956F700057828 /* RMQExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE7FEB81C3BD2B400DF8C4F /* RMQExchange.m */; };
+		9E2536871DA956F700057828 /* RMQConnectionRecover.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3415551CEBC4DC0071177A /* RMQConnectionRecover.m */; };
+		9E2536881DA956F700057828 /* RMQReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE445E01C7338FE0082132C /* RMQReader.m */; };
+		9E2536891DA956F700057828 /* RMQConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE7FEAC1C3BCD0F00DF8C4F /* RMQConnection.m */; };
+		9E25368A1DA956F700057828 /* RMQTCPSocketTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA45ED01C43F4DC00FE1F62 /* RMQTCPSocketTransport.m */; };
+		9E25368B1DA956F700057828 /* RMQSuspendResumeDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96A7681CE1F16600C772AA /* RMQSuspendResumeDispatcher.m */; };
+		9E25368C1DA956F700057828 /* RMQQueuingConnectionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE929C781CCF9CD7001A6524 /* RMQQueuingConnectionDelegateProxy.m */; };
+		9E25368D1DA956F700057828 /* RMQValues.m in Sources */ = {isa = PBXBuildFile; fileRef = AE39BD9D1C68B019000E7A77 /* RMQValues.m */; };
+		9E25368E1DA956F700057828 /* RMQURI.m in Sources */ = {isa = PBXBuildFile; fileRef = AE898D5A1C3C30D100AA3BF1 /* RMQURI.m */; };
+		9E25368F1DA956F700057828 /* RMQBasicProperties+MergeDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4B72FA1D17F9E000907667 /* RMQBasicProperties+MergeDefaults.m */; };
+		9E2536901DA956F700057828 /* RMQBasicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE445EA1C7373BF0082132C /* RMQBasicProperties.m */; };
+		9E2536911DA956F700057828 /* RMQUnallocatedChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE82798B1C8DBD6B0013ADD1 /* RMQUnallocatedChannel.m */; };
+		9E2536921DA956F700057828 /* RMQParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE80BAB21C4D47C100E6DFFD /* RMQParser.m */; };
+		9E2536931DA956F700057828 /* RMQGCDHeartbeatSender.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9595381CD0BC1E0039418C /* RMQGCDHeartbeatSender.m */; };
+		9E2536941DA956F700057828 /* RMQConfirmationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9DB00F1D12C5C30005F44B /* RMQConfirmationTransaction.m */; };
+		9E2536951DA956F700057828 /* RMQConnectionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFE6371C8EE7B30039D652 /* RMQConnectionConfig.m */; };
+		9E2536961DA956F700057828 /* RMQConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3415371CEB23490071177A /* RMQConsumer.m */; };
+		9E2536971DA956F700057828 /* RMQFrameset.m in Sources */ = {isa = PBXBuildFile; fileRef = AE744E361C85A20700A4C2FA /* RMQFrameset.m */; };
+		9E2536981DA956F700057828 /* RMQMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE05DA6B1C6A0848009E68C7 /* RMQMessage.m */; };
+		9E2536991DA956F700057828 /* RMQTickingClock.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9595431CD0EF4A0039418C /* RMQTickingClock.m */; };
+		9E25369A1DA956F700057828 /* RMQHandshaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF1E8FA1CBEA057000C7AB8 /* RMQHandshaker.m */; };
+		9E25369B1DA956F700057828 /* RMQErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB5F15F1CDA73D6001C82FF /* RMQErrors.m */; };
+		9E25369C1DA956F700057828 /* RMQSemaphoreWaiterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA8A76C1CCA0F8300371E38 /* RMQSemaphoreWaiterFactory.m */; };
+		9E25369D1DA956F700057828 /* RMQQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE7FEB41C3BD16200DF8C4F /* RMQQueue.m */; };
+		9E25369E1DA956F700057828 /* RMQMethods+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = AED74B4D1D22AF5F00EE9550 /* RMQMethods+Convenience.m */; };
+		9E25369F1DA956F700057828 /* RMQFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AE744E321C85A1B000A4C2FA /* RMQFrame.m */; };
+		9E2536A01DA956F700057828 /* RMQTransactionalConfirmations.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9DB0051D11F0820005F44B /* RMQTransactionalConfirmations.m */; };
+		9E2536A11DA956F700057828 /* RMQFramesetValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8AD2611CC53AEB00229444 /* RMQFramesetValidator.m */; };
+		9E2536A21DA956F700057828 /* RMQMethodDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEEF0811C4F9BFA0056A5EB /* RMQMethodDecoder.m */; };
+		9E2536A31DA956F700057828 /* RMQPKCS12CertificateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDBFF221CD8E2E20004DB67 /* RMQPKCS12CertificateConverter.m */; };
+		9E2536A41DA956F700057828 /* RMQConnectionDelegateLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA8E5CF1CC65D2C005B5E1E /* RMQConnectionDelegateLogger.m */; };
+		9E2536A51DA956F700057828 /* RMQProcessInfoNameGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE09C8361CCE64F400FA6915 /* RMQProcessInfoNameGenerator.m */; };
+		9E2536A61DA956F700057828 /* RMQMultipleChannelAllocator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8279871C8D88120013ADD1 /* RMQMultipleChannelAllocator.m */; };
+		9E2536A71DA956F700057828 /* RMQAllocatedChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE7FEB01C3BCEBA00DF8C4F /* RMQAllocatedChannel.m */; };
+		9E2536A81DA956F700057828 /* RMQGCDSerialQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA8A75E1CC97C1700371E38 /* RMQGCDSerialQueue.m */; };
+		9E2536A91DA956F700057828 /* RMQHeartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26FA2A1C9032E400CDBBAA /* RMQHeartbeat.m */; };
+		9E2536AA1DA956F700057828 /* RMQTable.m in Sources */ = {isa = PBXBuildFile; fileRef = AE338D7D1CF5F0CF005D8D6C /* RMQTable.m */; };
+		9E2536AC1DA956F700057828 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1E0EC81CB2613A008285DD /* CocoaAsyncSocket.framework */; };
+		9E2536AD1DA956F700057828 /* JKVValue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE46F91D1CFF47F8009DE49F /* JKVValue.framework */; };
+		9E2536AE1DA956F700057828 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEDB0C01CE3352900005A92 /* Gloss.framework */; };
+		9E2536B01DA956F700057828 /* RMQConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE7FEAB1C3BCD0F00DF8C4F /* RMQConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B11DA956F700057828 /* RMQConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AECDEC9E1CBC0E3600EA6E93 /* RMQConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B21DA956F700057828 /* RMQConnectionDelegateLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA8E5CE1CC65D2C005B5E1E /* RMQConnectionDelegateLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B31DA956F700057828 /* RMQTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA45EC91C43D2B900FE1F62 /* RMQTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B41DA956F700057828 /* RMQTransportDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF1E8F41CBE5810000C7AB8 /* RMQTransportDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B51DA956F700057828 /* RMQChannelAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE05DA661C69EC47009E68C7 /* RMQChannelAllocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B61DA956F700057828 /* RMQMultipleChannelAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8279861C8D88120013ADD1 /* RMQMultipleChannelAllocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B71DA956F700057828 /* RMQAllocatedChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE7FEAF1C3BCEBA00DF8C4F /* RMQAllocatedChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B81DA956F700057828 /* RMQMethodMap.h in Headers */ = {isa = PBXBuildFile; fileRef = AEADA37F1C71F59A00012D61 /* RMQMethodMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536B91DA956F700057828 /* RMQHeartbeat.h in Headers */ = {isa = PBXBuildFile; fileRef = AE26FA291C9032E400CDBBAA /* RMQHeartbeat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536BA1DA956F700057828 /* RMQChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = AE59345E1C873B6900560A73 /* RMQChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536BB1DA956F700057828 /* RMQURI.h in Headers */ = {isa = PBXBuildFile; fileRef = AE898D591C3C30D100AA3BF1 /* RMQURI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536BC1DA956F700057828 /* RMQFrameHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE445E31C7341CB0082132C /* RMQFrameHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536BD1DA956F700057828 /* RMQSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC4D1D61C74C1AC00D7D585 /* RMQSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536BE1DA956F700057828 /* RMQTCPSocketTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA45ECF1C43F4DC00FE1F62 /* RMQTCPSocketTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536BF1DA956F700057828 /* RMQFrameset.h in Headers */ = {isa = PBXBuildFile; fileRef = AE744E351C85A20700A4C2FA /* RMQFrameset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C01DA956F700057828 /* RMQQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE7FEB31C3BD16200DF8C4F /* RMQQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C11DA956F700057828 /* RMQParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AE80BAB11C4D47C100E6DFFD /* RMQParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C21DA956F700057828 /* RMQMethodDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEEF0801C4F9BFA0056A5EB /* RMQMethodDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C31DA956F700057828 /* RMQBasicProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE445E91C7373BF0082132C /* RMQBasicProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C41DA956F700057828 /* RMQMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4E7F491C6A293D00A441EC /* RMQMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C51DA956F700057828 /* RMQProtocolHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = AE39BDA01C68B105000E7A77 /* RMQProtocolHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C61DA956F700057828 /* RMQMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = AE05DA6A1C6A0848009E68C7 /* RMQMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C71DA956F700057828 /* RMQConnectionConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = AEFFE6361C8EE7B30039D652 /* RMQConnectionConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C81DA956F700057828 /* RMQExchange.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE7FEB71C3BD2B400DF8C4F /* RMQExchange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536C91DA956F700057828 /* RMQSynchronizedMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEB514B1CAC7780009F37D2 /* RMQSynchronizedMutableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536CA1DA956F700057828 /* RMQFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = AE744E311C85A1B000A4C2FA /* RMQFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536CB1DA956F700057828 /* RMQReader.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE445DF1C7338FE0082132C /* RMQReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536CC1DA956F700057828 /* RMQValues.h in Headers */ = {isa = PBXBuildFile; fileRef = AE39BD9C1C68B019000E7A77 /* RMQValues.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536CD1DA956F700057828 /* RMQFramesetValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8AD2601CC53AEB00229444 /* RMQFramesetValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536CE1DA956F700057828 /* RMQFramesetValidationResult.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8AD2641CC53B0D00229444 /* RMQFramesetValidationResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536CF1DA956F700057828 /* RMQHandshaker.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF1E8F91CBEA057000C7AB8 /* RMQHandshaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D01DA956F700057828 /* RMQUnallocatedChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = AE82798A1C8DBD6B0013ADD1 /* RMQUnallocatedChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D11DA956F700057828 /* RMQGCDSerialQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA8A75D1CC97C1700371E38 /* RMQGCDSerialQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D21DA956F700057828 /* RMQLocalSerialQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA8A75B1CC979AE00371E38 /* RMQLocalSerialQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D31DA956F700057828 /* RMQWaiter.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA8A7731CCA102900371E38 /* RMQWaiter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D41DA956F700057828 /* RMQWaiterFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA8A7691CC98E2500371E38 /* RMQWaiterFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D51DA956F700057828 /* RMQSemaphoreWaiterFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA8A76B1CCA0F8300371E38 /* RMQSemaphoreWaiterFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D61DA956F700057828 /* RMQSemaphoreWaiter.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA8A76F1CCA100300371E38 /* RMQSemaphoreWaiter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D71DA956F700057828 /* RMQNameGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE09C8331CCE648300FA6915 /* RMQNameGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D81DA956F700057828 /* RMQProcessInfoNameGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE09C8351CCE64F400FA6915 /* RMQProcessInfoNameGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536D91DA956F700057828 /* RMQQueuingConnectionDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = AE929C771CCF9CD7001A6524 /* RMQQueuingConnectionDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536DA1DA956F700057828 /* RMQHeartbeatSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9595331CD0B98F0039418C /* RMQHeartbeatSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536DB1DA956F700057828 /* RMQConsumerHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF0F7CC1CCECF87007DAF85 /* RMQConsumerHandlers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536DC1DA956F700057828 /* RMQGCDHeartbeatSender.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9595371CD0BC1E0039418C /* RMQGCDHeartbeatSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536DD1DA956F700057828 /* RMQClock.h in Headers */ = {isa = PBXBuildFile; fileRef = AE95953E1CD0E7E00039418C /* RMQClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536DE1DA956F700057828 /* RMQTickingClock.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9595421CD0EF4A0039418C /* RMQTickingClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536DF1DA956F700057828 /* RMQPKCS12CertificateConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDBFF211CD8E2E20004DB67 /* RMQPKCS12CertificateConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E01DA956F700057828 /* RMQDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = AE96A76B1CE1F2F000C772AA /* RMQDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E11DA956F700057828 /* RMQTLSOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDBFF2E1CD8FAF70004DB67 /* RMQTLSOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E21DA956F700057828 /* RMQSuspendResumeDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = AE96A7671CE1F16600C772AA /* RMQSuspendResumeDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E31DA956F700057828 /* RMQConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3415361CEB23490071177A /* RMQConsumer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E41DA956F700057828 /* RMQErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB5F15B1CDA42A5001C82FF /* RMQErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E51DA956F700057828 /* RMQStarter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3415451CEB7FF20071177A /* RMQStarter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E61DA956F700057828 /* RMQConnectionRecovery.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3415431CEB74190071177A /* RMQConnectionRecovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E71DA956F700057828 /* RMQTransactionalConfirmations.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9DB0041D11F0820005F44B /* RMQTransactionalConfirmations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E81DA956F700057828 /* RMQConnectionRecover.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3415541CEBC4DC0071177A /* RMQConnectionRecover.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536E91DA956F700057828 /* RMQConfirmations.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9DB00A1D12A4C40005F44B /* RMQConfirmations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536EA1DA956F700057828 /* RMQConfirmationTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9DB00E1D12C5C30005F44B /* RMQConfirmationTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536EB1DA956F700057828 /* RMQBasicProperties+MergeDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4B72F91D17F9E000907667 /* RMQBasicProperties+MergeDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536EC1DA956F700057828 /* RMQMethods+Convenience.h in Headers */ = {isa = PBXBuildFile; fileRef = AED74B4B1D22AF2400EE9550 /* RMQMethods+Convenience.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536ED1DA956F700057828 /* RMQTable.h in Headers */ = {isa = PBXBuildFile; fileRef = AE338D7C1CF5F0CF005D8D6C /* RMQTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536EE1DA956F700057828 /* RMQClient.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE7FE941C3BCA6000DF8C4F /* RMQClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E2536F21DA956F700057828 /* CocoaAsyncSocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE1E0EC81CB2613A008285DD /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E2536F31DA956F700057828 /* JKVValue.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE46F91D1CFF47F8009DE49F /* JKVValue.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E2536FD1DA9640400057828 /* RMQURIParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE898D571C3C2D2E00AA3BF1 /* RMQURIParseTest.swift */; };
+		9E2536FE1DA9640400057828 /* RMQTransactionalConfirmationsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DB00C1D12AA120005F44B /* RMQTransactionalConfirmationsTest.swift */; };
+		9E2536FF1DA9640400057828 /* RMQMessageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE11F1B11D155C8A007AD330 /* RMQMessageTest.swift */; };
+		9E2537001DA9640400057828 /* ConfirmationsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DB0081D11FDED0005F44B /* ConfirmationsSpy.swift */; };
+		9E2537011DA9640400057828 /* RMQGCDSerialQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8A7611CC97C7900371E38 /* RMQGCDSerialQueueTest.swift */; };
+		9E2537021DA9640400057828 /* ChannelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59345A1C8735FA00560A73 /* ChannelSpy.swift */; };
+		9E2537031DA9640400057828 /* RMQUnallocatedChannelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8AD25B1CC4E67F00229444 /* RMQUnallocatedChannelTest.swift */; };
+		9E2537041DA9640400057828 /* HeartbeatSenderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9595351CD0BA240039418C /* HeartbeatSenderSpy.swift */; };
+		9E2537051DA9640400057828 /* CertificateFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDBFF2B1CD8E4850004DB67 /* CertificateFixtures.swift */; };
+		9E2537061DA9640400057828 /* QueueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA10361D199E0500ED9EA2 /* QueueHelper.swift */; };
+		9E2537071DA9640400057828 /* FakeSerialQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8A7631CC985EC00371E38 /* FakeSerialQueue.swift */; };
+		9E2537081DA9640400057828 /* StubNameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09C8391CCE65B100FA6915 /* StubNameGenerator.swift */; };
+		9E2537091DA9640400057828 /* ConnectionTuningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE541F421C7E132700C17932 /* ConnectionTuningTest.swift */; };
+		9E25370A1DA9640400057828 /* RMQSuspendResumeDispatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48F9331CE22CA200296A23 /* RMQSuspendResumeDispatcherTest.swift */; };
+		9E25370B1DA9640400057828 /* RMQSemaphoreWaiterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09C8021CCE112C00FA6915 /* RMQSemaphoreWaiterTest.swift */; };
+		9E25370C1DA9640400057828 /* ChannelSpyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26FA301C97157700CDBBAA /* ChannelSpyTest.swift */; };
+		9E25370D1DA9640400057828 /* ChannelRecoveryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43841A1CEC9DAD000A4A7A /* ChannelRecoveryTest.swift */; };
+		9E25370E1DA9640400057828 /* RMQReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE445E71C7342EE0082132C /* RMQReaderTest.swift */; };
+		9E25370F1DA9640400057828 /* ChannelCreationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF7D661CBD197D006EA2E4 /* ChannelCreationTest.swift */; };
+		9E2537101DA9640400057828 /* RMQFramesetValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8AD2681CC545ED00229444 /* RMQFramesetValidatorTest.swift */; };
+		9E2537111DA9640400057828 /* RMQSynchronizedMutableDictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB514F1CADC42E009F37D2 /* RMQSynchronizedMutableDictionaryTest.swift */; };
+		9E2537121DA9640400057828 /* ConnectionWithFakesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE34154E1CEBB6650071177A /* ConnectionWithFakesHelper.swift */; };
+		9E2537131DA9640400057828 /* DispatcherSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96A76D1CE2126100C772AA /* DispatcherSpy.swift */; };
+		9E2537141DA9640400057828 /* ControlledInteractionTransportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB8B541C7DEDE5002D3FCE /* ControlledInteractionTransportTest.swift */; };
+		9E2537151DA9640400057828 /* RMQTLSOptionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDBFF321CD907D80004DB67 /* RMQTLSOptionsTest.swift */; };
+		9E2537161DA9640400057828 /* RMQProcessInfoNameGeneratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09C83B1CCE680F00FA6915 /* RMQProcessInfoNameGeneratorTest.swift */; };
+		9E2537171DA9640400057828 /* ChannelAllocationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8279841C8D86110013ADD1 /* ChannelAllocationTest.swift */; };
+		9E2537181DA9640400057828 /* BasicPropertyFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE338D8D1CF60D3D005D8D6C /* BasicPropertyFixtures.swift */; };
+		9E2537191DA9640400057828 /* QueueDeclarationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09C8311CCE589800FA6915 /* QueueDeclarationTest.swift */; };
+		9E25371A1DA9640400057828 /* ConnectionClosureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE929C7B1CD00EB7001A6524 /* ConnectionClosureTest.swift */; };
+		9E25371B1DA9640400057828 /* ExchangeBindTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B18E61CEA62DF006E36B1 /* ExchangeBindTest.swift */; };
+		9E25371C1DA9640400057828 /* FakeSerialQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8A7651CC987FA00371E38 /* FakeSerialQueueTest.swift */; };
+		9E25371D1DA9640400057828 /* FakeClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9595401CD0E80E0039418C /* FakeClock.swift */; };
+		9E25371E1DA9640400057828 /* RMQChannelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26FA2D1C970DF100CDBBAA /* RMQChannelContract.swift */; };
+		9E25371F1DA9640400057828 /* ExchangeDeclarationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09C82D1CCE369C00FA6915 /* ExchangeDeclarationTest.swift */; };
+		9E2537201DA9640400057828 /* MethodFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41C5521C4FC88F00129207 /* MethodFixtures.swift */; };
+		9E2537211DA9640400057828 /* ControlledInteractionTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA37D1C71D64A00012D61 /* ControlledInteractionTransport.swift */; };
+		9E2537221DA9640400057828 /* RMQFrameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26FA271C90309F00CDBBAA /* RMQFrameTest.swift */; };
+		9E2537231DA9640400057828 /* RMQAllocatedChannelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5934541C870C0E00560A73 /* RMQAllocatedChannelTest.swift */; };
+		9E2537241DA9640400057828 /* ConsumeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE34153A1CEB56ED0071177A /* ConsumeTest.swift */; };
+		9E2537251DA9640400057828 /* RMQPKCS12CertificateConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDBFF291CD8E3AD0004DB67 /* RMQPKCS12CertificateConverterTest.swift */; };
+		9E2537261DA9640400057828 /* PublisherConfirmationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBE6D1C1D105B7900951CC3 /* PublisherConfirmationTest.swift */; };
+		9E2537271DA9640400057828 /* ConnectionDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECDECA01CBC4A4F00EA6E93 /* ConnectionDelegateSpy.swift */; };
+		9E2537281DA9640400057828 /* ChannelSpyAllocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59345C1C87375F00560A73 /* ChannelSpyAllocator.swift */; };
+		9E2537291DA9640400057828 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA10381D1A9E2C00ED9EA2 /* ConnectionHelper.swift */; };
+		9E25372A1DA9640400057828 /* TransportDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF1E8F61CBE5E6A000C7AB8 /* TransportDelegateSpy.swift */; };
+		9E25372B1DA9640400057828 /* ChannelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DB0121D12D1DB0005F44B /* ChannelHelper.swift */; };
+		9E25372C1DA9640400057828 /* RecoverySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3415501CEBBD730071177A /* RecoverySpy.swift */; };
+		9E25372D1DA9640400057828 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE111BD61C57B33300F88277 /* TestHelper.swift */; };
+		9E25372E1DA9640400057828 /* FakeWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8A7791CCA6FF100371E38 /* FakeWaiter.swift */; };
+		9E25372F1DA9640400057828 /* RMQTransportContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41C5621C51A2D500129207 /* RMQTransportContract.swift */; };
+		9E2537301DA9640400057828 /* EncodingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3E0E371C56416F00186BA7 /* EncodingTest.swift */; };
+		9E2537311DA9640400057828 /* QueueBindTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09C82F1CCE495300FA6915 /* QueueBindTest.swift */; };
+		9E2537321DA9640400057828 /* RMQParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE26FA321C999BBF00CDBBAA /* RMQParserTest.swift */; };
+		9E2537331DA9640400057828 /* RMQConnectionRecoverTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3415521CEBC2F90071177A /* RMQConnectionRecoverTest.swift */; };
+		9E2537341DA9640400057828 /* RMQQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA7A3D81C72255900BDEA05 /* RMQQueueTest.swift */; };
+		9E2537351DA9640400057828 /* FramesetRoutingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5934581C87353400560A73 /* FramesetRoutingTest.swift */; };
+		9E2537361DA9640400057828 /* RMQExchangeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09C8041CCE258A00FA6915 /* RMQExchangeTest.swift */; };
+		9E2537371DA9640400057828 /* FrameHandlerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB8B4C1C7DD4FA002D3FCE /* FrameHandlerSpy.swift */; };
+		9E2537381DA9640400057828 /* StarterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3415481CEB81D40071177A /* StarterSpy.swift */; };
+		9E2537391DA9640400057828 /* SenderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB8B491C7DC0A5002D3FCE /* SenderSpy.swift */; };
+		9E25373A1DA9640400057828 /* RMQConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA45EC71C43CBBE00FE1F62 /* RMQConnectionTest.swift */; };
+		9E25373B1DA9640400057828 /* FakeWaiterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8A7771CCA6F9B00371E38 /* FakeWaiterFactory.swift */; };
+		9E2537461DA9713100057828 /* RMQClient_macOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2536F71DA956F700057828 /* RMQClient_macOSX.framework */; };
+		9EF241EA1DABD96E00EA5E14 /* CocoaAsyncSocket.framework in Resources */ = {isa = PBXBuildFile; fileRef = AE1E0EC81CB2613A008285DD /* CocoaAsyncSocket.framework */; };
+		9EF241EB1DABD97700EA5E14 /* JKVValue.framework in Resources */ = {isa = PBXBuildFile; fileRef = AE46F91D1CFF47F8009DE49F /* JKVValue.framework */; };
+		9EF241EC1DABD97D00EA5E14 /* Gloss.framework in Resources */ = {isa = PBXBuildFile; fileRef = AEEDB0C01CE3352900005A92 /* Gloss.framework */; };
 		AE05DA681C69EC47009E68C7 /* RMQChannelAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE05DA661C69EC47009E68C7 /* RMQChannelAllocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE05DA6C1C6A0848009E68C7 /* RMQMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = AE05DA6A1C6A0848009E68C7 /* RMQMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE05DA6D1C6A0848009E68C7 /* RMQMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE05DA6B1C6A0848009E68C7 /* RMQMessage.m */; };
@@ -209,6 +390,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9E2537441DA9711600057828 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE7FE881C3BCA6000DF8C4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E25367D1DA956F700057828;
+			remoteInfo = RMQClient_macOSX;
+		};
 		AEA45EDD1C440FE400FE1F62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEE7FE881C3BCA6000DF8C4F /* Project object */;
@@ -226,6 +414,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9E2536F11DA956F700057828 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9E2536F21DA956F700057828 /* CocoaAsyncSocket.framework in CopyFiles */,
+				9E2536F31DA956F700057828 /* JKVValue.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE40C7491CB272E600CC7B97 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,6 +449,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E2536F71DA956F700057828 /* RMQClient_macOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RMQClient_macOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E2536F81DA956F700057828 /* RMQClient_macOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RMQClient_macOSX-Info.plist"; path = "/Proj/Freeman/researchProjs/RabbitOSX/rabbitmq-objc-client-master/RMQClient_macOSX-Info.plist"; sourceTree = "<absolute>"; };
+		9E2537421DA9640400057828 /* RMQClientTests_macOSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMQClientTests_macOSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E2537431DA9640400057828 /* RMQClientTests_macOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RMQClientTests_macOSX-Info.plist"; path = "/Proj/Freeman/researchProjs/RabbitOSX/rabbitmq-objc-client-master/RMQClientTests_macOSX-Info.plist"; sourceTree = "<absolute>"; };
 		AE05DA661C69EC47009E68C7 /* RMQChannelAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMQChannelAllocator.h; sourceTree = "<group>"; };
 		AE05DA6A1C6A0848009E68C7 /* RMQMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMQMessage.h; sourceTree = "<group>"; };
 		AE05DA6B1C6A0848009E68C7 /* RMQMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMQMessage.m; sourceTree = "<group>"; };
@@ -265,7 +468,7 @@
 		AE09C83B1CCE680F00FA6915 /* RMQProcessInfoNameGeneratorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQProcessInfoNameGeneratorTest.swift; sourceTree = "<group>"; };
 		AE111BD61C57B33300F88277 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		AE11F1B11D155C8A007AD330 /* RMQMessageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQMessageTest.swift; sourceTree = "<group>"; };
-		AE1E0EC81CB2613A008285DD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		AE1E0EC81CB2613A008285DD /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../CocoaAsyncSocket-master/build/Products/Debug/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
 		AE26FA271C90309F00CDBBAA /* RMQFrameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQFrameTest.swift; sourceTree = "<group>"; };
 		AE26FA291C9032E400CDBBAA /* RMQHeartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMQHeartbeat.h; sourceTree = "<group>"; };
 		AE26FA2A1C9032E400CDBBAA /* RMQHeartbeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMQHeartbeat.m; sourceTree = "<group>"; };
@@ -294,7 +497,7 @@
 		AE41C5521C4FC88F00129207 /* MethodFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MethodFixtures.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE41C5621C51A2D500129207 /* RMQTransportContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RMQTransportContract.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE43841A1CEC9DAD000A4A7A /* ChannelRecoveryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelRecoveryTest.swift; sourceTree = "<group>"; };
-		AE46F91D1CFF47F8009DE49F /* JKVValue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JKVValue.framework; path = Carthage/Build/iOS/JKVValue.framework; sourceTree = "<group>"; };
+		AE46F91D1CFF47F8009DE49F /* JKVValue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JKVValue.framework; path = "../JKVValue-master/build/Products/Debug/JKVValue.framework"; sourceTree = "<group>"; };
 		AE48F9331CE22CA200296A23 /* RMQSuspendResumeDispatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQSuspendResumeDispatcherTest.swift; sourceTree = "<group>"; };
 		AE4B72F91D17F9E000907667 /* RMQBasicProperties+MergeDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RMQBasicProperties+MergeDefaults.h"; sourceTree = "<group>"; };
 		AE4B72FA1D17F9E000907667 /* RMQBasicProperties+MergeDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RMQBasicProperties+MergeDefaults.m"; sourceTree = "<group>"; };
@@ -430,7 +633,7 @@
 		AEEDB0BA1CE32F5300005A92 /* RMQHTTPTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQHTTPTest.swift; sourceTree = "<group>"; };
 		AEEDB0BC1CE3325B00005A92 /* RMQHTTPParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQHTTPParser.swift; sourceTree = "<group>"; };
 		AEEDB0BE1CE3326C00005A92 /* RMQHTTPParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQHTTPParserTest.swift; sourceTree = "<group>"; };
-		AEEDB0C01CE3352900005A92 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
+		AEEDB0C01CE3352900005A92 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "../Gloss-develop/build/Products/Debug/Gloss.framework"; sourceTree = "<group>"; };
 		AEEEF0801C4F9BFA0056A5EB /* RMQMethodDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RMQMethodDecoder.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		AEEEF0811C4F9BFA0056A5EB /* RMQMethodDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RMQMethodDecoder.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AEF0F7CC1CCECF87007DAF85 /* RMQConsumerHandlers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMQConsumerHandlers.h; sourceTree = "<group>"; };
@@ -443,6 +646,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9E2536AB1DA956F700057828 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2536AC1DA956F700057828 /* CocoaAsyncSocket.framework in Frameworks */,
+				9E2536AD1DA956F700057828 /* JKVValue.framework in Frameworks */,
+				9E2536AE1DA956F700057828 /* Gloss.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E25373C1DA9640400057828 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2537461DA9713100057828 /* RMQClient_macOSX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEA45ED41C440FE400FE1F62 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,6 +678,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1E0EC91CB2613A008285DD /* CocoaAsyncSocket.framework in Frameworks */,
+				9E25367B1DA9538400057828 /* JKVValue.framework in Frameworks */,
+				9E25367C1DA9538B00057828 /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,6 +992,8 @@
 				AEE7FE9F1C3BCA6000DF8C4F /* RMQClientTests */,
 				AEA45ED81C440FE400FE1F62 /* RMQClientIntegrationTests */,
 				AEE7FE921C3BCA6000DF8C4F /* Products */,
+				9E2536F81DA956F700057828 /* RMQClient_macOSX-Info.plist */,
+				9E2537431DA9640400057828 /* RMQClientTests_macOSX-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -778,6 +1003,8 @@
 				AEE7FE911C3BCA6000DF8C4F /* RMQClient.framework */,
 				AEE7FE9B1C3BCA6000DF8C4F /* RMQClientTests.xctest */,
 				AEA45ED71C440FE400FE1F62 /* RMQClientIntegrationTests.xctest */,
+				9E2536F71DA956F700057828 /* RMQClient_macOSX.framework */,
+				9E2537421DA9640400057828 /* RMQClientTests_macOSX.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -879,6 +1106,76 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		9E2536AF1DA956F700057828 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2536B01DA956F700057828 /* RMQConnection.h in Headers */,
+				9E2536B11DA956F700057828 /* RMQConnectionDelegate.h in Headers */,
+				9E2536B21DA956F700057828 /* RMQConnectionDelegateLogger.h in Headers */,
+				9E2536B31DA956F700057828 /* RMQTransport.h in Headers */,
+				9E2536B41DA956F700057828 /* RMQTransportDelegate.h in Headers */,
+				9E2536B51DA956F700057828 /* RMQChannelAllocator.h in Headers */,
+				9E2536B61DA956F700057828 /* RMQMultipleChannelAllocator.h in Headers */,
+				9E2536B71DA956F700057828 /* RMQAllocatedChannel.h in Headers */,
+				9E2536B81DA956F700057828 /* RMQMethodMap.h in Headers */,
+				9E2536B91DA956F700057828 /* RMQHeartbeat.h in Headers */,
+				9E2536BA1DA956F700057828 /* RMQChannel.h in Headers */,
+				9E2536BB1DA956F700057828 /* RMQURI.h in Headers */,
+				9E2536BC1DA956F700057828 /* RMQFrameHandler.h in Headers */,
+				9E2536BD1DA956F700057828 /* RMQSender.h in Headers */,
+				9E2536BE1DA956F700057828 /* RMQTCPSocketTransport.h in Headers */,
+				9E2536BF1DA956F700057828 /* RMQFrameset.h in Headers */,
+				9E2536C01DA956F700057828 /* RMQQueue.h in Headers */,
+				9E2536C11DA956F700057828 /* RMQParser.h in Headers */,
+				9E2536C21DA956F700057828 /* RMQMethodDecoder.h in Headers */,
+				9E2536C31DA956F700057828 /* RMQBasicProperties.h in Headers */,
+				9E2536C41DA956F700057828 /* RMQMethods.h in Headers */,
+				9E2536C51DA956F700057828 /* RMQProtocolHeader.h in Headers */,
+				9E2536C61DA956F700057828 /* RMQMessage.h in Headers */,
+				9E2536C71DA956F700057828 /* RMQConnectionConfig.h in Headers */,
+				9E2536C81DA956F700057828 /* RMQExchange.h in Headers */,
+				9E2536C91DA956F700057828 /* RMQSynchronizedMutableDictionary.h in Headers */,
+				9E2536CA1DA956F700057828 /* RMQFrame.h in Headers */,
+				9E2536CB1DA956F700057828 /* RMQReader.h in Headers */,
+				9E2536CC1DA956F700057828 /* RMQValues.h in Headers */,
+				9E2536CD1DA956F700057828 /* RMQFramesetValidator.h in Headers */,
+				9E2536CE1DA956F700057828 /* RMQFramesetValidationResult.h in Headers */,
+				9E2536CF1DA956F700057828 /* RMQHandshaker.h in Headers */,
+				9E2536D01DA956F700057828 /* RMQUnallocatedChannel.h in Headers */,
+				9E2536D11DA956F700057828 /* RMQGCDSerialQueue.h in Headers */,
+				9E2536D21DA956F700057828 /* RMQLocalSerialQueue.h in Headers */,
+				9E2536D31DA956F700057828 /* RMQWaiter.h in Headers */,
+				9E2536D41DA956F700057828 /* RMQWaiterFactory.h in Headers */,
+				9E2536D51DA956F700057828 /* RMQSemaphoreWaiterFactory.h in Headers */,
+				9E2536D61DA956F700057828 /* RMQSemaphoreWaiter.h in Headers */,
+				9E2536D71DA956F700057828 /* RMQNameGenerator.h in Headers */,
+				9E2536D81DA956F700057828 /* RMQProcessInfoNameGenerator.h in Headers */,
+				9E2536D91DA956F700057828 /* RMQQueuingConnectionDelegateProxy.h in Headers */,
+				9E2536DA1DA956F700057828 /* RMQHeartbeatSender.h in Headers */,
+				9E2536DB1DA956F700057828 /* RMQConsumerHandlers.h in Headers */,
+				9E2536DC1DA956F700057828 /* RMQGCDHeartbeatSender.h in Headers */,
+				9E2536DD1DA956F700057828 /* RMQClock.h in Headers */,
+				9E2536DE1DA956F700057828 /* RMQTickingClock.h in Headers */,
+				9E2536DF1DA956F700057828 /* RMQPKCS12CertificateConverter.h in Headers */,
+				9E2536E01DA956F700057828 /* RMQDispatcher.h in Headers */,
+				9E2536E11DA956F700057828 /* RMQTLSOptions.h in Headers */,
+				9E2536E21DA956F700057828 /* RMQSuspendResumeDispatcher.h in Headers */,
+				9E2536E31DA956F700057828 /* RMQConsumer.h in Headers */,
+				9E2536E41DA956F700057828 /* RMQErrors.h in Headers */,
+				9E2536E51DA956F700057828 /* RMQStarter.h in Headers */,
+				9E2536E61DA956F700057828 /* RMQConnectionRecovery.h in Headers */,
+				9E2536E71DA956F700057828 /* RMQTransactionalConfirmations.h in Headers */,
+				9E2536E81DA956F700057828 /* RMQConnectionRecover.h in Headers */,
+				9E2536E91DA956F700057828 /* RMQConfirmations.h in Headers */,
+				9E2536EA1DA956F700057828 /* RMQConfirmationTransaction.h in Headers */,
+				9E2536EB1DA956F700057828 /* RMQBasicProperties+MergeDefaults.h in Headers */,
+				9E2536EC1DA956F700057828 /* RMQMethods+Convenience.h in Headers */,
+				9E2536ED1DA956F700057828 /* RMQTable.h in Headers */,
+				9E2536EE1DA956F700057828 /* RMQClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEE7FE8E1C3BCA6000DF8C4F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -952,6 +1249,44 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9E25367D1DA956F700057828 /* RMQClient_macOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E2536F41DA956F700057828 /* Build configuration list for PBXNativeTarget "RMQClient_macOSX" */;
+			buildPhases = (
+				9E25367E1DA956F700057828 /* Sources */,
+				9E2536AB1DA956F700057828 /* Frameworks */,
+				9E2536AF1DA956F700057828 /* Headers */,
+				9E2536EF1DA956F700057828 /* Resources */,
+				9E2536F01DA956F700057828 /* ShellScript */,
+				9E2536F11DA956F700057828 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RMQClient_macOSX;
+			productName = RMQClient;
+			productReference = 9E2536F71DA956F700057828 /* RMQClient_macOSX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9E2536F91DA9640400057828 /* RMQClientTests_macOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E25373F1DA9640400057828 /* Build configuration list for PBXNativeTarget "RMQClientTests_macOSX" */;
+			buildPhases = (
+				9E2536FC1DA9640400057828 /* Sources */,
+				9E25373C1DA9640400057828 /* Frameworks */,
+				9E25373E1DA9640400057828 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E2537451DA9711600057828 /* PBXTargetDependency */,
+			);
+			name = RMQClientTests_macOSX;
+			productName = RMQClientTests;
+			productReference = 9E2537421DA9640400057828 /* RMQClientTests_macOSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AEA45ED61C440FE400FE1F62 /* RMQClientIntegrationTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEA45EDF1C440FE400FE1F62 /* Build configuration list for PBXNativeTarget "RMQClientIntegrationTests" */;
@@ -1017,17 +1352,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Pivotal;
 				TargetAttributes = {
+					9E2536F91DA9640400057828 = {
+						LastSwiftMigration = 0800;
+					};
 					AEA45ED61C440FE400FE1F62 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					AEE7FE901C3BCA6000DF8C4F = {
 						CreatedOnToolsVersion = 7.0;
 					};
 					AEE7FE9A1C3BCA6000DF8C4F = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -1046,11 +1386,30 @@
 				AEE7FE901C3BCA6000DF8C4F /* RMQClient */,
 				AEE7FE9A1C3BCA6000DF8C4F /* RMQClientTests */,
 				AEA45ED61C440FE400FE1F62 /* RMQClientIntegrationTests */,
+				9E25367D1DA956F700057828 /* RMQClient_macOSX */,
+				9E2536F91DA9640400057828 /* RMQClientTests_macOSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9E2536EF1DA956F700057828 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E25373E1DA9640400057828 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EF241EC1DABD97D00EA5E14 /* Gloss.framework in Resources */,
+				9EF241EB1DABD97700EA5E14 /* JKVValue.framework in Resources */,
+				9EF241EA1DABD96E00EA5E14 /* CocoaAsyncSocket.framework in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEA45ED51C440FE400FE1F62 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1075,6 +1434,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9E2536F01DA956F700057828 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/JKVValue.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#TJ_COMMENTED_OUT:\n#/usr/local/bin/carthage copy-frameworks";
+		};
 		AE637E2C1C4CFF28006F9EDF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1107,6 +1481,127 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9E25367E1DA956F700057828 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E25367F1DA956F700057828 /* RMQFramesetValidationResult.m in Sources */,
+				9E2536801DA956F700057828 /* RMQSynchronizedMutableDictionary.m in Sources */,
+				9E2536811DA956F700057828 /* RMQMethodMap.m in Sources */,
+				9E2536821DA956F700057828 /* RMQTLSOptions.m in Sources */,
+				9E2536831DA956F700057828 /* RMQSemaphoreWaiter.m in Sources */,
+				9E2536841DA956F700057828 /* RMQMethods.m in Sources */,
+				9E2536851DA956F700057828 /* RMQProtocolHeader.m in Sources */,
+				9E2536861DA956F700057828 /* RMQExchange.m in Sources */,
+				9E2536871DA956F700057828 /* RMQConnectionRecover.m in Sources */,
+				9E2536881DA956F700057828 /* RMQReader.m in Sources */,
+				9E2536891DA956F700057828 /* RMQConnection.m in Sources */,
+				9E25368A1DA956F700057828 /* RMQTCPSocketTransport.m in Sources */,
+				9E25368B1DA956F700057828 /* RMQSuspendResumeDispatcher.m in Sources */,
+				9E25368C1DA956F700057828 /* RMQQueuingConnectionDelegateProxy.m in Sources */,
+				9E25368D1DA956F700057828 /* RMQValues.m in Sources */,
+				9E25368E1DA956F700057828 /* RMQURI.m in Sources */,
+				9E25368F1DA956F700057828 /* RMQBasicProperties+MergeDefaults.m in Sources */,
+				9E2536901DA956F700057828 /* RMQBasicProperties.m in Sources */,
+				9E2536911DA956F700057828 /* RMQUnallocatedChannel.m in Sources */,
+				9E2536921DA956F700057828 /* RMQParser.m in Sources */,
+				9E2536931DA956F700057828 /* RMQGCDHeartbeatSender.m in Sources */,
+				9E2536941DA956F700057828 /* RMQConfirmationTransaction.m in Sources */,
+				9E2536951DA956F700057828 /* RMQConnectionConfig.m in Sources */,
+				9E2536961DA956F700057828 /* RMQConsumer.m in Sources */,
+				9E2536971DA956F700057828 /* RMQFrameset.m in Sources */,
+				9E2536981DA956F700057828 /* RMQMessage.m in Sources */,
+				9E2536991DA956F700057828 /* RMQTickingClock.m in Sources */,
+				9E25369A1DA956F700057828 /* RMQHandshaker.m in Sources */,
+				9E25369B1DA956F700057828 /* RMQErrors.m in Sources */,
+				9E25369C1DA956F700057828 /* RMQSemaphoreWaiterFactory.m in Sources */,
+				9E25369D1DA956F700057828 /* RMQQueue.m in Sources */,
+				9E25369E1DA956F700057828 /* RMQMethods+Convenience.m in Sources */,
+				9E25369F1DA956F700057828 /* RMQFrame.m in Sources */,
+				9E2536A01DA956F700057828 /* RMQTransactionalConfirmations.m in Sources */,
+				9E2536A11DA956F700057828 /* RMQFramesetValidator.m in Sources */,
+				9E2536A21DA956F700057828 /* RMQMethodDecoder.m in Sources */,
+				9E2536A31DA956F700057828 /* RMQPKCS12CertificateConverter.m in Sources */,
+				9E2536A41DA956F700057828 /* RMQConnectionDelegateLogger.m in Sources */,
+				9E2536A51DA956F700057828 /* RMQProcessInfoNameGenerator.m in Sources */,
+				9E2536A61DA956F700057828 /* RMQMultipleChannelAllocator.m in Sources */,
+				9E2536A71DA956F700057828 /* RMQAllocatedChannel.m in Sources */,
+				9E2536A81DA956F700057828 /* RMQGCDSerialQueue.m in Sources */,
+				9E2536A91DA956F700057828 /* RMQHeartbeat.m in Sources */,
+				9E2536AA1DA956F700057828 /* RMQTable.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E2536FC1DA9640400057828 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2536FD1DA9640400057828 /* RMQURIParseTest.swift in Sources */,
+				9E2536FE1DA9640400057828 /* RMQTransactionalConfirmationsTest.swift in Sources */,
+				9E2536FF1DA9640400057828 /* RMQMessageTest.swift in Sources */,
+				9E2537001DA9640400057828 /* ConfirmationsSpy.swift in Sources */,
+				9E2537011DA9640400057828 /* RMQGCDSerialQueueTest.swift in Sources */,
+				9E2537021DA9640400057828 /* ChannelSpy.swift in Sources */,
+				9E2537031DA9640400057828 /* RMQUnallocatedChannelTest.swift in Sources */,
+				9E2537041DA9640400057828 /* HeartbeatSenderSpy.swift in Sources */,
+				9E2537051DA9640400057828 /* CertificateFixtures.swift in Sources */,
+				9E2537061DA9640400057828 /* QueueHelper.swift in Sources */,
+				9E2537071DA9640400057828 /* FakeSerialQueue.swift in Sources */,
+				9E2537081DA9640400057828 /* StubNameGenerator.swift in Sources */,
+				9E2537091DA9640400057828 /* ConnectionTuningTest.swift in Sources */,
+				9E25370A1DA9640400057828 /* RMQSuspendResumeDispatcherTest.swift in Sources */,
+				9E25370B1DA9640400057828 /* RMQSemaphoreWaiterTest.swift in Sources */,
+				9E25370C1DA9640400057828 /* ChannelSpyTest.swift in Sources */,
+				9E25370D1DA9640400057828 /* ChannelRecoveryTest.swift in Sources */,
+				9E25370E1DA9640400057828 /* RMQReaderTest.swift in Sources */,
+				9E25370F1DA9640400057828 /* ChannelCreationTest.swift in Sources */,
+				9E2537101DA9640400057828 /* RMQFramesetValidatorTest.swift in Sources */,
+				9E2537111DA9640400057828 /* RMQSynchronizedMutableDictionaryTest.swift in Sources */,
+				9E2537121DA9640400057828 /* ConnectionWithFakesHelper.swift in Sources */,
+				9E2537131DA9640400057828 /* DispatcherSpy.swift in Sources */,
+				9E2537141DA9640400057828 /* ControlledInteractionTransportTest.swift in Sources */,
+				9E2537151DA9640400057828 /* RMQTLSOptionsTest.swift in Sources */,
+				9E2537161DA9640400057828 /* RMQProcessInfoNameGeneratorTest.swift in Sources */,
+				9E2537171DA9640400057828 /* ChannelAllocationTest.swift in Sources */,
+				9E2537181DA9640400057828 /* BasicPropertyFixtures.swift in Sources */,
+				9E2537191DA9640400057828 /* QueueDeclarationTest.swift in Sources */,
+				9E25371A1DA9640400057828 /* ConnectionClosureTest.swift in Sources */,
+				9E25371B1DA9640400057828 /* ExchangeBindTest.swift in Sources */,
+				9E25371C1DA9640400057828 /* FakeSerialQueueTest.swift in Sources */,
+				9E25371D1DA9640400057828 /* FakeClock.swift in Sources */,
+				9E25371E1DA9640400057828 /* RMQChannelContract.swift in Sources */,
+				9E25371F1DA9640400057828 /* ExchangeDeclarationTest.swift in Sources */,
+				9E2537201DA9640400057828 /* MethodFixtures.swift in Sources */,
+				9E2537211DA9640400057828 /* ControlledInteractionTransport.swift in Sources */,
+				9E2537221DA9640400057828 /* RMQFrameTest.swift in Sources */,
+				9E2537231DA9640400057828 /* RMQAllocatedChannelTest.swift in Sources */,
+				9E2537241DA9640400057828 /* ConsumeTest.swift in Sources */,
+				9E2537251DA9640400057828 /* RMQPKCS12CertificateConverterTest.swift in Sources */,
+				9E2537261DA9640400057828 /* PublisherConfirmationTest.swift in Sources */,
+				9E2537271DA9640400057828 /* ConnectionDelegateSpy.swift in Sources */,
+				9E2537281DA9640400057828 /* ChannelSpyAllocator.swift in Sources */,
+				9E2537291DA9640400057828 /* ConnectionHelper.swift in Sources */,
+				9E25372A1DA9640400057828 /* TransportDelegateSpy.swift in Sources */,
+				9E25372B1DA9640400057828 /* ChannelHelper.swift in Sources */,
+				9E25372C1DA9640400057828 /* RecoverySpy.swift in Sources */,
+				9E25372D1DA9640400057828 /* TestHelper.swift in Sources */,
+				9E25372E1DA9640400057828 /* FakeWaiter.swift in Sources */,
+				9E25372F1DA9640400057828 /* RMQTransportContract.swift in Sources */,
+				9E2537301DA9640400057828 /* EncodingTest.swift in Sources */,
+				9E2537311DA9640400057828 /* QueueBindTest.swift in Sources */,
+				9E2537321DA9640400057828 /* RMQParserTest.swift in Sources */,
+				9E2537331DA9640400057828 /* RMQConnectionRecoverTest.swift in Sources */,
+				9E2537341DA9640400057828 /* RMQQueueTest.swift in Sources */,
+				9E2537351DA9640400057828 /* FramesetRoutingTest.swift in Sources */,
+				9E2537361DA9640400057828 /* RMQExchangeTest.swift in Sources */,
+				9E2537371DA9640400057828 /* FrameHandlerSpy.swift in Sources */,
+				9E2537381DA9640400057828 /* StarterSpy.swift in Sources */,
+				9E2537391DA9640400057828 /* SenderSpy.swift in Sources */,
+				9E25373A1DA9640400057828 /* RMQConnectionTest.swift in Sources */,
+				9E25373B1DA9640400057828 /* FakeWaiterFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEA45ED31C440FE400FE1F62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1260,6 +1755,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9E2537451DA9711600057828 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E25367D1DA956F700057828 /* RMQClient_macOSX */;
+			targetProxy = 9E2537441DA9711600057828 /* PBXContainerItemProxy */;
+		};
 		AEA45EDE1C440FE400FE1F62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEE7FE901C3BCA6000DF8C4F /* RMQClient */;
@@ -1273,6 +1773,97 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9E2536F51DA956F700057828 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 8;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../JKVValue-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../CocoaAsyncSocket-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../Gloss-develop/build/Products/Debug",
+				);
+				INFOPLIST_FILE = "RMQClient_macOSX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.RMQClientMacOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.12;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9E2536F61DA956F700057828 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 8;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../JKVValue-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../CocoaAsyncSocket-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../Gloss-develop/build/Products/Debug",
+				);
+				INFOPLIST_FILE = "RMQClient_macOSX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.RMQClientMacOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.12;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9E2537401DA9640400057828 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../JKVValue-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../CocoaAsyncSocket-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../Gloss-develop/build/Products/Debug",
+				);
+				INFOPLIST_FILE = "RMQClientTests_macOSX-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks @loader_path/../Frameworks @executable_path/../Resources @loader_path/../Resources";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.RMQClientTestsMacOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "RMQClientTests/RMQClientTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9E2537411DA9640400057828 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../JKVValue-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../CocoaAsyncSocket-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../Gloss-develop/build/Products/Debug",
+				);
+				INFOPLIST_FILE = "RMQClientTests_macOSX-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks @loader_path/../Frameworks @executable_path/../Resources @loader_path/../Resources";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.RMQClientTestsMacOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "RMQClientTests/RMQClientTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		AEA45EE01C440FE400FE1F62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1286,6 +1877,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RMQClientIntegrationTests/RMQClientIntegrationTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1301,6 +1893,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.RMQClientIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RMQClientIntegrationTests/RMQClientIntegrationTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1317,11 +1910,12 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1341,7 +1935,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1364,11 +1957,12 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1382,9 +1976,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1395,13 +1989,16 @@
 		AEE7FEA61C3BCA6000DF8C4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer: tadd@megaphonestudios.com (EXHR8NZ843)";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 8;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../JKVValue-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../CocoaAsyncSocket-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../Gloss-develop/build/Products/Debug",
 				);
 				INFOPLIST_FILE = RMQClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1416,13 +2013,16 @@
 		AEE7FEA71C3BCA6000DF8C4F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer: tadd@megaphonestudios.com (EXHR8NZ843)";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 8;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../JKVValue-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../CocoaAsyncSocket-master/build/Products/Debug",
+					"$(PROJECT_DIR)/../Gloss-develop/build/Products/Debug",
 				);
 				INFOPLIST_FILE = RMQClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1448,6 +2048,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RMQClientTests/RMQClientTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1464,12 +2065,31 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.RMQClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RMQClientTests/RMQClientTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9E2536F41DA956F700057828 /* Build configuration list for PBXNativeTarget "RMQClient_macOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E2536F51DA956F700057828 /* Debug */,
+				9E2536F61DA956F700057828 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E25373F1DA9640400057828 /* Build configuration list for PBXNativeTarget "RMQClientTests_macOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E2537401DA9640400057828 /* Debug */,
+				9E2537411DA9640400057828 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AEA45EDF1C440FE400FE1F62 /* Build configuration list for PBXNativeTarget "RMQClientIntegrationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

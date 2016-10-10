@@ -114,14 +114,14 @@ class ConnectionTuningTest: XCTestCase {
         let heartbeatSender = HeartbeatSenderSpy()
         let q = connectWithOptions(transport, 1, 1, 100, heartbeatSender: heartbeatSender)
         XCTAssertNil(heartbeatSender.heartbeatIntervalReceived)
-        negotiatedParamsGivenServerParams(transport, q,
-                                          RMQShort(11), RMQLong(10), RMQShort(0))
+        _ = negotiatedParamsGivenServerParams(transport, q,
+                                              RMQShort(11), RMQLong(10), RMQShort(0))
         XCTAssertEqual(50, heartbeatSender.heartbeatIntervalReceived)
     }
 
     // MARK: Helpers
 
-    func connectWithOptions(transport: ControlledInteractionTransport,
+    func connectWithOptions(_ transport: ControlledInteractionTransport,
                             _ channelMax: Int, _ frameMax: UInt, _ heartbeat: Int,
                               heartbeatSender: RMQHeartbeatSender = HeartbeatSenderSpy()) -> FakeSerialQueue {
         let q = FakeSerialQueue()
@@ -132,7 +132,7 @@ class ConnectionTuningTest: XCTestCase {
             channelAllocator: ChannelSpyAllocator(),
             frameHandler: FrameHandlerSpy(),
             delegate: nil,
-            commandQueue: q,
+            command: q,
             waiterFactory: FakeWaiterFactory(),
             heartbeatSender: heartbeatSender
         )
@@ -141,18 +141,18 @@ class ConnectionTuningTest: XCTestCase {
         return q
     }
 
-    func clientTuneOk(channelMax: RMQShort, _ frameMax: RMQLong, _ heartbeat: RMQShort) -> RMQConnectionTuneOk {
+    func clientTuneOk(_ channelMax: RMQShort, _ frameMax: RMQLong, _ heartbeat: RMQShort) -> RMQConnectionTuneOk {
         return RMQConnectionTuneOk(channelMax: channelMax, frameMax: frameMax, heartbeat: heartbeat)
     }
 
-    func negotiatedParamsGivenServerParams(transport: ControlledInteractionTransport,
+    func negotiatedParamsGivenServerParams(_ transport: ControlledInteractionTransport,
                                            _ q: FakeSerialQueue,
                                              _ channelMax: RMQShort,
                                                _ frameMax: RMQLong,
                                                  _ heartbeat: RMQShort) -> RMQConnectionTuneOk {
         let tune = RMQConnectionTune(channelMax: channelMax, frameMax: frameMax, heartbeat: heartbeat)
 
-        transport
+        _ = transport
             .serverSendsPayload(MethodFixtures.connectionStart(), channelNumber: 0)
             .serverSendsPayload(tune, channelNumber: 0)
             .serverSendsPayload(MethodFixtures.connectionOpenOk(), channelNumber: 0)

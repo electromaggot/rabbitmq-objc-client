@@ -273,6 +273,12 @@ completionHandler:(RMQConsumerDeliveryHandler _Nonnull)completionHandler;
  */
 - (nonnull RMQExchange *)direct:(nonnull NSString *)name;
 
+//TJ_ADDED:
+- (nonnull RMQExchange *)dirent:(nonnull NSString *)name
+						options:(RMQExchangeDeclareOptions)options;
+- (nonnull RMQExchange *)dirent:(nonnull NSString *)name;
+///TJ
+
 /*!
  * @brief  Create a topic exchange.
  * @return RMQExchange the new topic exchange.

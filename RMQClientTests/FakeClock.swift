@@ -49,14 +49,14 @@
 // under either the MPL or the ASL License.
 // ---------------------------------------------------------------------------
 
-@objc class FakeClock: NSObject, RMQClock {
+class FakeClock: NSObject, RMQClock {
     var date = NSDate()
 
-    func read() -> NSDate! {
-        return date
+    func read() -> Date! {
+        return date as Date!
     }
 
-    func advance(interval: NSTimeInterval) {
-        date = date.dateByAddingTimeInterval(interval)
+    func advance(_ interval: TimeInterval) {
+        date = date.addingTimeInterval(interval)
     }
 }

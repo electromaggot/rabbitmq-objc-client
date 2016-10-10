@@ -62,8 +62,8 @@ class RMQReaderTest: XCTestCase {
 
         reader.run()
 
-        transport.serverSendsPayload(RMQHeartbeat(), channelNumber: 0)
-        transport.serverSendsPayload(method, channelNumber: 42)
+        _ = transport.serverSendsPayload(RMQHeartbeat(), channelNumber: 0)
+        _ = transport.serverSendsPayload(method, channelNumber: 42)
 
         XCTAssertEqual(
             expectedFrameset,
@@ -81,7 +81,7 @@ class RMQReaderTest: XCTestCase {
 
         reader.run()
 
-        transport.serverSendsPayload(method, channelNumber: 42)
+        _ = transport.serverSendsPayload(method, channelNumber: 42)
 
         XCTAssertEqual(
             expectedFrameset,
@@ -95,8 +95,8 @@ class RMQReaderTest: XCTestCase {
         let frameHandler = FrameHandlerSpy()
         let reader = RMQReader(transport: transport, frameHandler: frameHandler)
         let method = MethodFixtures.basicGetOk(routingKey: "my.great.queue")
-        let content1 = RMQContentBody(data: "aa".dataUsingEncoding(NSUTF8StringEncoding)!)
-        let content2 = RMQContentBody(data: "bb".dataUsingEncoding(NSUTF8StringEncoding)!)
+        let content1 = RMQContentBody(data: "aa".data(using: String.Encoding.utf8)!)
+        let content2 = RMQContentBody(data: "bb".data(using: String.Encoding.utf8)!)
         let contentHeader = RMQContentHeader(
             classID: 10,
             bodySize: 999999,
@@ -115,7 +115,7 @@ class RMQReaderTest: XCTestCase {
 
         reader.run()
 
-        transport
+        _ = transport
             .serverSendsPayload(method, channelNumber: 42)
             .serverSendsPayload(contentHeader, channelNumber: 42)
             .serverSendsPayload(content1, channelNumber: 42)
@@ -132,11 +132,11 @@ class RMQReaderTest: XCTestCase {
         let frameHandler = FrameHandlerSpy()
         let reader = RMQReader(transport: transport, frameHandler: frameHandler)
         let method = MethodFixtures.basicGetOk(routingKey: "my.great.queue")
-        let content1 = RMQContentBody(data: "aa".dataUsingEncoding(NSUTF8StringEncoding)!)
-        let content2 = RMQContentBody(data: "bb".dataUsingEncoding(NSUTF8StringEncoding)!)
+        let content1 = RMQContentBody(data: "aa".data(using: String.Encoding.utf8)!)
+        let content2 = RMQContentBody(data: "bb".data(using: String.Encoding.utf8)!)
         let contentHeader = RMQContentHeader(
             classID: 10,
-            bodySize: content1.amqEncoded().length + content2.amqEncoded().length,
+            bodySize: (content1.amqEncoded().count + content2.amqEncoded().count) as NSNumber,
             properties: [
                 RMQBasicContentType("text/flame")
             ]
@@ -150,7 +150,7 @@ class RMQReaderTest: XCTestCase {
 
         reader.run()
 
-        transport
+        _ = transport
             .serverSendsPayload(method, channelNumber: 42)
             .serverSendsPayload(contentHeader, channelNumber: 42)
             .serverSendsPayload(content1, channelNumber: 42)
@@ -169,10 +169,10 @@ class RMQReaderTest: XCTestCase {
 
         reader.run()
 
-        transport.serverSendsData(deliver.amqEncoded())
+        _ = transport.serverSendsData(deliver.amqEncoded())
 
         let before = transport.readCallbacks.count
-        transport.serverSendsData(header.amqEncoded())
+        _ = transport.serverSendsData(header.amqEncoded())
         let after = transport.readCallbacks.count
 
         XCTAssertEqual(after, before)
@@ -190,14 +190,14 @@ class RMQReaderTest: XCTestCase {
 
         reader.run()
 
-        transport.serverSendsData(deliver.amqEncoded())
-        transport.serverSendsData(headerFrame.amqEncoded())
+        _ = transport.serverSendsData(deliver.amqEncoded())
+        _ = transport.serverSendsData(headerFrame.amqEncoded())
 
         XCTAssertEqual(RMQFrameset(channelNumber: 42, method: method, contentHeader: header, contentBodies: []),
                        frameHandler.lastReceivedFrameset())
     }
 
     func nonContentPayload() -> RMQBasicDeliver {
-        return RMQBasicDeliver(consumerTag: RMQShortstr(""), deliveryTag: RMQLonglong(0), options: RMQBasicDeliverOptions.NoOptions, exchange: RMQShortstr(""), routingKey: RMQShortstr("somekey"))
+        return RMQBasicDeliver(consumerTag: RMQShortstr(""), deliveryTag: RMQLonglong(0), options: [], exchange: RMQShortstr(""), routingKey: RMQShortstr("somekey"))
     }
 }

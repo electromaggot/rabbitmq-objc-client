@@ -72,7 +72,7 @@ class ChannelCreationTest: XCTestCase {
                              channelAllocator: allocator!,
                              frameHandler: frameHandler,
                              delegate: delegate!,
-                             commandQueue: q!,
+                             command: q!,
                              waiterFactory: FakeWaiterFactory(),
                              heartbeatSender: HeartbeatSenderSpy())
     }
@@ -80,7 +80,7 @@ class ChannelCreationTest: XCTestCase {
     func testSendsChannelActivateIfHandshakeIsComplete() {
         conn?.start()
         try! q?.step()
-        transport?.handshake()
+        _ = transport?.handshake()
 
         conn?.createChannel()
 
@@ -97,7 +97,7 @@ class ChannelCreationTest: XCTestCase {
         XCTAssertNil(allocator!.channels.last!.delegateSentToActivate)
         try! q?.step()
         try! q?.step()
-        transport?.handshake()
+        _ = transport?.handshake()
         XCTAssertNotNil(allocator!.channels.last!.delegateSentToActivate)
     }
 

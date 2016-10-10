@@ -66,7 +66,7 @@ class RMQTCPSocketTransportTest: XCTestCase {
                                               port: 5672,
                                               tlsOptions: noTLS,
                                               callbackStorage: callbacks)
-        var receivedData: NSData?
+        var receivedData: Data?
         transport.readFrame { data in
             receivedData = data
         }
@@ -130,26 +130,26 @@ class RMQTCPSocketTransportTest: XCTestCase {
     }
 
     func testConnectsViaTLS() {
-        let semaphore = dispatch_semaphore_create(0)
+        let semaphore = DispatchSemaphore(value: 0)
         let transport = RMQTCPSocketTransport(host: "127.0.0.1", port: 5671,
                                               tlsOptions: RMQTLSOptions(peerName: "localhost", verifyPeer: false, pkcs12: nil, pkcs12Password: ""))
         try! transport.connect()
         transport.write(RMQProtocolHeader().amqEncoded())
 
-        var receivedData: NSData?
+        var receivedData: Data?
         transport.readFrame { data in
             receivedData = data
             dispatch_semaphore_signal(semaphore)
         }
 
-        XCTAssertEqual(0, dispatch_semaphore_wait(semaphore, TestHelper.dispatchTimeFromNow(2)),
+        XCTAssertEqual(0, semaphore.wait(timeout: TestHelper.dispatchTimeFromNow(2)),
                        "Timed out waiting for read")
         let parser = RMQParser(data: receivedData!)
         XCTAssert(RMQFrame(parser: parser).payload.isKindOfClass(RMQConnectionStart))
     }
 
     func testConnectsViaTLSWithClientCert() {
-        let semaphore = dispatch_semaphore_create(0)
+        let semaphore = DispatchSemaphore(value: 0)
         let tlsOptions = RMQTLSOptions(
             peerName: "localhost",
             verifyPeer: false,
@@ -160,13 +160,13 @@ class RMQTCPSocketTransportTest: XCTestCase {
         try! transport.connect()
         transport.write(RMQProtocolHeader().amqEncoded())
 
-        var receivedData: NSData?
+        var receivedData: Data?
         transport.readFrame { data in
             receivedData = data
             dispatch_semaphore_signal(semaphore)
         }
 
-        XCTAssertEqual(0, dispatch_semaphore_wait(semaphore, TestHelper.dispatchTimeFromNow(2)),
+        XCTAssertEqual(0, semaphore.wait(timeout: TestHelper.dispatchTimeFromNow(2)),
                        "Timed out waiting for read")
         let parser = RMQParser(data: receivedData!)
         XCTAssert(RMQFrame(parser: parser).payload.isKindOfClass(RMQConnectionStart))

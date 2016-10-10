@@ -72,12 +72,12 @@ class RMQTransportContract {
     func sendingPreambleStimulatesAConnectionStart() -> RMQTransportContract {
         defer { self.transport.close() }
         
-        var readData: NSData = NSData()
+        var readData: Data = Data()
         var connectionStart = RMQConnectionStart()
 
         try! self.transport.connect()
         self.transport.write(RMQProtocolHeader().amqEncoded())
-        XCTAssertEqual(0, readData.length)
+        XCTAssertEqual(0, readData.count)
         self.transport.readFrame() { receivedData in
             readData = receivedData
             let parser = RMQParser(data: readData)
@@ -85,7 +85,7 @@ class RMQTransportContract {
             connectionStart = frame.payload as! RMQConnectionStart
         }
 
-        XCTAssert(TestHelper.pollUntil { return readData.length > 0 }, "didn't read")
+        XCTAssert(TestHelper.pollUntil { return readData.count > 0 }, "didn't read")
         XCTAssertEqual(RMQOctet(0), connectionStart.versionMajor)
         XCTAssertEqual(RMQOctet(9), connectionStart.versionMinor)
 
@@ -93,7 +93,7 @@ class RMQTransportContract {
     }
 
     func check() {
-        connectAndDisconnect()
+        _ = connectAndDisconnect()
             .sendingPreambleStimulatesAConnectionStart()
     }
 }

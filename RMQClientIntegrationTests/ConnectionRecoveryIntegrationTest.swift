@@ -51,8 +51,8 @@
 
 import XCTest
 
-enum RecoveryTestError : ErrorType {
-    case TimeOutWaitingForConnectionCountToDrop
+enum RecoveryTestError : Error {
+    case timeOutWaitingForConnectionCountToDrop
 }
 
 class ConnectionRecoveryIntegrationTest: XCTestCase {
@@ -61,7 +61,7 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
 
     func testRecoversFromSocketDisconnect() {
         let recoveryInterval = 5
-        let recoveryTimeout: NSTimeInterval = 30
+        let recoveryTimeout: TimeInterval = 30
         let semaphoreTimeout: Double = 30
         let confirmationTimeout = 5
         let delegate = ConnectionDelegateSpy()
@@ -77,8 +77,8 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
         let q = ch.queue("", options: [.Exclusive], arguments: ["x-max-length" : RMQShort(3)])
         let ex1 = ch.direct("foo", options: [.AutoDelete])
         let ex2 = ch.direct("bar", options: [.AutoDelete])
-        let consumerSemaphore = dispatch_semaphore_create(0)
-        let confirmSemaphore = dispatch_semaphore_create(0)
+        let consumerSemaphore = DispatchSemaphore(value: 0)
+        let confirmSemaphore = DispatchSemaphore(value: 0)
 
         ex2.bind(ex1)
         q.bind(ex2)
@@ -91,8 +91,8 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
 
         ch.confirmSelect()
 
-        ex1.publish("before close".dataUsingEncoding(NSUTF8StringEncoding))
-        XCTAssertEqual(0, dispatch_semaphore_wait(consumerSemaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout)),
+        ex1.publish("before close".dataUsingEncoding(String.Encoding.utf8))
+        XCTAssertEqual(0, consumerSemaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout)),
                        "Timed out waiting for message")
 
         transport.simulateDisconnect()
@@ -100,10 +100,10 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
         XCTAssert(TestHelper.pollUntil(recoveryTimeout) { delegate.recoveredConnection != nil },
                   "Didn't finish recovery")
 
-        q.publish("after close 1".dataUsingEncoding(NSUTF8StringEncoding))
-        dispatch_semaphore_wait(consumerSemaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout))
-        ex1.publish("after close 2".dataUsingEncoding(NSUTF8StringEncoding))
-        dispatch_semaphore_wait(consumerSemaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout))
+        q.publish("after close 1".dataUsingEncoding(String.Encoding.utf8))
+        consumerSemaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout))
+        ex1.publish("after close 2".dataUsingEncoding(String.Encoding.utf8))
+        consumerSemaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout))
 
         var acks: Set<NSNumber>?
         var nacks: Set<NSNumber>?
@@ -114,20 +114,20 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
         }
 
         XCTAssertEqual(3, messages.count)
-        XCTAssertEqual("before close".dataUsingEncoding(NSUTF8StringEncoding), messages[0].body)
-        XCTAssertEqual("after close 1".dataUsingEncoding(NSUTF8StringEncoding), messages[1].body)
-        XCTAssertEqual("after close 2".dataUsingEncoding(NSUTF8StringEncoding), messages[2].body)
+        XCTAssertEqual("before close".dataUsingEncoding(String.Encoding.utf8), messages[0].body)
+        XCTAssertEqual("after close 1".dataUsingEncoding(String.Encoding.utf8), messages[1].body)
+        XCTAssertEqual("after close 2".dataUsingEncoding(String.Encoding.utf8), messages[2].body)
 
-        XCTAssertEqual(0, dispatch_semaphore_wait(confirmSemaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout)))
+        XCTAssertEqual(0, confirmSemaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout)))
         XCTAssertEqual(acks!.union(nacks!), [1, 2, 3],
                        "Didn't receive acks or nacks for publications")
 
         // test recovery of queue arguments - in this case, x-max-length
         consumer.cancel()
-        q.publish("4".dataUsingEncoding(NSUTF8StringEncoding))
-        q.publish("5".dataUsingEncoding(NSUTF8StringEncoding))
-        q.publish("6".dataUsingEncoding(NSUTF8StringEncoding))
-        q.publish("7".dataUsingEncoding(NSUTF8StringEncoding))
+        q.publish("4".dataUsingEncoding(String.Encoding.utf8))
+        q.publish("5".dataUsingEncoding(String.Encoding.utf8))
+        q.publish("6".dataUsingEncoding(String.Encoding.utf8))
+        q.publish("7".dataUsingEncoding(String.Encoding.utf8))
 
         var messagesPostCancel: [RMQMessage] = []
         q.subscribe { m in
@@ -136,11 +136,11 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
         }
 
         for _ in 5...7 {
-            XCTAssertEqual(0, dispatch_semaphore_wait(consumerSemaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout)))
+            XCTAssertEqual(0, consumerSemaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout)))
         }
-        XCTAssertEqual("5".dataUsingEncoding(NSUTF8StringEncoding), messagesPostCancel[0].body)
-        XCTAssertEqual("6".dataUsingEncoding(NSUTF8StringEncoding), messagesPostCancel[1].body)
-        XCTAssertEqual("7".dataUsingEncoding(NSUTF8StringEncoding), messagesPostCancel[2].body)
+        XCTAssertEqual("5".dataUsingEncoding(String.Encoding.utf8), messagesPostCancel[0].body)
+        XCTAssertEqual("6".dataUsingEncoding(String.Encoding.utf8), messagesPostCancel[1].body)
+        XCTAssertEqual("7".dataUsingEncoding(String.Encoding.utf8), messagesPostCancel[2].body)
     }
 
     func testReenablesConsumersOnEachRecoveryFromConnectionClose() {
@@ -155,7 +155,7 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
                                  heartbeat: 10,
                                  syncTimeout: 10,
                                  delegate: delegate,
-                                 delegateQueue: dispatch_get_main_queue(),
+                                 delegateQueue: DispatchQueue.main,
                                  recoverAfter: recoveryInterval,
                                  recoveryAttempts: 2,
                                  recoverFromConnectionClose: true)
@@ -164,7 +164,7 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
         let ch = conn.createChannel()
         let q = ch.queue("", options: [.AutoDelete, .Exclusive])
         let ex = ch.direct("foo", options: [.AutoDelete])
-        let semaphore = dispatch_semaphore_create(0)
+        let semaphore = DispatchSemaphore(value: 0)
         var messages: [RMQMessage] = []
 
         q.bind(ex)
@@ -174,8 +174,8 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
             dispatch_semaphore_signal(semaphore)
         }
 
-        ex.publish("before close".dataUsingEncoding(NSUTF8StringEncoding))
-        XCTAssertEqual(0, dispatch_semaphore_wait(semaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout)),
+        ex.publish("before close".dataUsingEncoding(String.Encoding.utf8))
+        XCTAssertEqual(0, semaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout)),
                        "Timed out waiting for message")
 
         try! closeAllConnections()
@@ -184,48 +184,48 @@ class ConnectionRecoveryIntegrationTest: XCTestCase {
                   "Didn't finish recovery the first time")
         delegate.recoveredConnection = nil
 
-        q.publish("after close 1".dataUsingEncoding(NSUTF8StringEncoding))
-        dispatch_semaphore_wait(semaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout))
-        ex.publish("after close 2".dataUsingEncoding(NSUTF8StringEncoding))
-        dispatch_semaphore_wait(semaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout))
+        q.publish("after close 1".dataUsingEncoding(String.Encoding.utf8))
+        semaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout))
+        ex.publish("after close 2".dataUsingEncoding(String.Encoding.utf8))
+        semaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout))
 
-        XCTAssertEqual("before close".dataUsingEncoding(NSUTF8StringEncoding), messages[0].body)
-        XCTAssertEqual("after close 1".dataUsingEncoding(NSUTF8StringEncoding), messages[1].body)
-        XCTAssertEqual("after close 2".dataUsingEncoding(NSUTF8StringEncoding), messages[2].body)
+        XCTAssertEqual("before close".dataUsingEncoding(String.Encoding.utf8), messages[0].body)
+        XCTAssertEqual("after close 1".dataUsingEncoding(String.Encoding.utf8), messages[1].body)
+        XCTAssertEqual("after close 2".dataUsingEncoding(String.Encoding.utf8), messages[2].body)
 
         try! closeAllConnections()
 
         XCTAssert(TestHelper.pollUntil { delegate.recoveredConnection != nil },
                   "Didn't finish recovery the second time")
 
-        q.publish("after close 3".dataUsingEncoding(NSUTF8StringEncoding))
-        dispatch_semaphore_wait(semaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout))
-        ex.publish("after close 4".dataUsingEncoding(NSUTF8StringEncoding))
-        dispatch_semaphore_wait(semaphore, TestHelper.dispatchTimeFromNow(semaphoreTimeout))
+        q.publish("after close 3".dataUsingEncoding(String.Encoding.utf8))
+        semaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout))
+        ex.publish("after close 4".dataUsingEncoding(String.Encoding.utf8))
+        semaphore.wait(timeout: TestHelper.dispatchTimeFromNow(semaphoreTimeout))
 
-        XCTAssertEqual("before close".dataUsingEncoding(NSUTF8StringEncoding), messages[0].body)
-        XCTAssertEqual("after close 1".dataUsingEncoding(NSUTF8StringEncoding), messages[1].body)
-        XCTAssertEqual("after close 2".dataUsingEncoding(NSUTF8StringEncoding), messages[2].body)
-        XCTAssertEqual("after close 3".dataUsingEncoding(NSUTF8StringEncoding), messages[3].body)
-        XCTAssertEqual("after close 4".dataUsingEncoding(NSUTF8StringEncoding), messages[4].body)
+        XCTAssertEqual("before close".dataUsingEncoding(String.Encoding.utf8), messages[0].body)
+        XCTAssertEqual("after close 1".dataUsingEncoding(String.Encoding.utf8), messages[1].body)
+        XCTAssertEqual("after close 2".dataUsingEncoding(String.Encoding.utf8), messages[2].body)
+        XCTAssertEqual("after close 3".dataUsingEncoding(String.Encoding.utf8), messages[3].body)
+        XCTAssertEqual("after close 4".dataUsingEncoding(String.Encoding.utf8), messages[4].body)
     }
 
-    private func connections() -> [RMQHTTPConnection] {
+    fileprivate func connections() -> [RMQHTTPConnection] {
         return RMQHTTPParser().connections(httpAPI.get("/connections"))
     }
 
-    private func closeAllConnections() throws {
+    fileprivate func closeAllConnections() throws {
         let conns = connections()
         XCTAssertGreaterThan(conns.count, 0)
 
         for conn in conns {
-            let escapedName = conn.name.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+            let escapedName = conn.name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed())!
             let path = "/connections/\(escapedName)"
             httpAPI.delete(path)
         }
 
         if (!TestHelper.pollUntil(30) { self.connections().count == 0 }) {
-            throw RecoveryTestError.TimeOutWaitingForConnectionCountToDrop
+            throw RecoveryTestError.timeOutWaitingForConnectionCountToDrop
         }
     }
 

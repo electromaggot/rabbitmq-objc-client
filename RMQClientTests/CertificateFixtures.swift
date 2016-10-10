@@ -105,6 +105,6 @@ class CertificateFixtures {
             "2RNJDTp4A9mhvwwwMTAhMAkGBSsOAwIaBQAEFGhCv6aq9bpEnp8d8d3eyE1O" +
         "A6JFBAjbmojQPVKS/wICCAA="
 
-        return NSData(base64EncodedString: p12str, options: [])!
+        return NSData(base64Encoded: p12str, options: [])!
     }
 }

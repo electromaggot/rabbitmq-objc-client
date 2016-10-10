@@ -66,7 +66,7 @@ class RMQChannelContract {
 
     func cachesQueuesWithSameName() -> RMQChannelContract {
         let q = ch.queue("my name", options: [])
-        XCTAssert(q === ch.queue("my name", options: [.AutoDelete, .Exclusive]), "queue not same cached object")
+        XCTAssert(q === ch.queue("my name", options: [.autoDelete, .exclusive]), "queue not same cached object")
         return self
     }
 
@@ -77,7 +77,7 @@ class RMQChannelContract {
     }
 
     func check() {
-        canInstantiateAQueueThatHoldsItsName()
+        _ = canInstantiateAQueueThatHoldsItsName()
             .cachesQueuesWithSameName()
             .doesNotCacheQueuesWithDifferentNames()
     }

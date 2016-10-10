@@ -53,8 +53,8 @@ import XCTest
 
 class RMQUnallocatedChannelTest: XCTestCase {
 
-    func assertSendsErrorToDelegate(delegate: ConnectionDelegateSpy, _ blockIndex: Int) {
-        XCTAssertEqual(RMQError.ChannelUnallocated.rawValue, delegate.lastChannelError?.code)
+    func assertSendsErrorToDelegate(_ delegate: ConnectionDelegateSpy, _ blockIndex: Int) {
+        XCTAssertEqual(RMQError.channelUnallocated.rawValue, delegate.lastChannelError?.code)
         XCTAssertEqual("Unallocated channel", delegate.lastChannelError?.localizedDescription,
                        "Didn't get error when running block \(blockIndex)")
     }
@@ -62,7 +62,7 @@ class RMQUnallocatedChannelTest: XCTestCase {
     func testSendsErrorToDelegateWhenUsageAttempted() {
         let delegate = ConnectionDelegateSpy()
         let ch = RMQUnallocatedChannel()
-        ch.activateWithDelegate(delegate)
+		ch.activate(with: delegate)
 
         let blocks: [() -> Void] = [
             { ch.ack(1) },
@@ -70,16 +70,18 @@ class RMQUnallocatedChannelTest: XCTestCase {
             { ch.basicConsume("foo", options: []) { _ in } },
             { ch.generateConsumerTag() },
             { ch.basicGet("foo", options: []) { _ in } },
-            { ch.basicPublish("hi".dataUsingEncoding(NSUTF8StringEncoding)!, routingKey: "yo", exchange: "hmm", properties: [], options: []) },
+            { ch.basicPublish("hi".data(using: String.Encoding.utf8)!, routingKey: "yo", exchange: "hmm", properties: [], options: []) },
             { ch.basicQos(2, global: false) },
-            { ch.blockingWaitOn(RMQConnectionStart.self) },
+            { ch.blockingWait(on: RMQConnectionStart.self) },
             { ch.confirmSelect() },
             { ch.defaultExchange() },
             { ch.exchangeDeclare("", type: "", options: []) },
             { ch.exchangeBind("", destination: "", routingKey: "") },
             { ch.exchangeUnbind("", destination: "", routingKey: "") },
             { ch.fanout("") },
-            { ch.direct("") },
+            //TJ_KLUDGE:
+			{ ch.dirent("") },
+			//{ ch.direct("") },
             { ch.topic("") },
             { ch.headers("") },
             { ch.exchangeDelete("", options: []) },
@@ -91,7 +93,7 @@ class RMQUnallocatedChannelTest: XCTestCase {
             { ch.reject(1) },
         ]
 
-        for (index, run) in blocks.enumerate() {
+        for (index, run) in blocks.enumerated() {
             delegate.lastChannelError = nil
             run()
             assertSendsErrorToDelegate(delegate, index)
@@ -101,7 +103,7 @@ class RMQUnallocatedChannelTest: XCTestCase {
     func testCloseMethodsDoNotProduceError() {
         let delegate = ConnectionDelegateSpy()
         let ch = RMQUnallocatedChannel()
-        ch.activateWithDelegate(delegate)
+		ch.activate(with: delegate)
         ch.blockingClose()
         XCTAssertNil(delegate.lastChannelError)
     }

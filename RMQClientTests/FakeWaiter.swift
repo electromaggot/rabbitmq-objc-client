@@ -49,7 +49,7 @@
 // under either the MPL or the ASL License.
 // ---------------------------------------------------------------------------
 
-@objc class FakeWaiter: NSObject, RMQWaiter {
+class FakeWaiter: NSObject, RMQWaiter {
     var doneCalled = false
     var timesOutCalled = false
 

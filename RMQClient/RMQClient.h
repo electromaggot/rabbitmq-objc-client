@@ -49,7 +49,12 @@
 // under either the MPL or the ASL License.
 // ---------------------------------------------------------------------------
 
+//TJ_ADDED:
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#else
+//#import <AppKit/AppKit.h>
+#endif
 #import <RMQClient/RMQConnection.h>
 #import <RMQClient/RMQErrors.h>
 #import <RMQClient/RMQBasicProperties.h>

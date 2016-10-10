@@ -230,6 +230,16 @@ completionHandler:(RMQConsumerDeliveryHandler)completionHandler {
     return [self direct:name options:RMQExchangeDeclareNoOptions];
 }
 
+//TJ_KLUDGE:
+- (RMQExchange *)dirent:(NSString *)name options:(RMQExchangeDeclareOptions)options {
+	[self err];
+	return nil;
+}
+- (RMQExchange *)dirent:(NSString *)name {
+	return [self dirent:name options:RMQExchangeDeclareNoOptions];
+}
+///TJ
+
 - (RMQExchange *)topic:(NSString *)name options:(RMQExchangeDeclareOptions)options {
     [self err];
     return nil;

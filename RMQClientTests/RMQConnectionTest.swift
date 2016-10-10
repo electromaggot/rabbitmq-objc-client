@@ -62,7 +62,7 @@ class RMQConnectionTest: XCTestCase {
             channelAllocator: ChannelSpyAllocator(),
             frameHandler: FrameHandlerSpy(),
             delegate: ConnectionDelegateSpy(),
-            commandQueue: q,
+            command: q,
             waiterFactory: FakeWaiterFactory(),
             heartbeatSender: HeartbeatSenderSpy()
         )
@@ -70,7 +70,7 @@ class RMQConnectionTest: XCTestCase {
         conn.start { called = true }
         try! q.step()
         XCTAssertFalse(called)
-        transport.handshake()
+        _ = transport.handshake()
         XCTAssert(called)
     }
 
@@ -83,10 +83,10 @@ class RMQConnectionTest: XCTestCase {
             transport: transport,
             config: ConnectionWithFakesHelper.connectionConfig(),
             handshakeTimeout: 10,
-            channelAllocator: allocator,
-            frameHandler: allocator,
+            channelAllocator: allocator!,
+            frameHandler: allocator!,
             delegate: delegate,
-            commandQueue: FakeSerialQueue(),
+            command: FakeSerialQueue(),
             waiterFactory: RMQSemaphoreWaiterFactory(),
             heartbeatSender: HeartbeatSenderSpy()
         )
@@ -104,10 +104,10 @@ class RMQConnectionTest: XCTestCase {
             transport: transport,
             config: ConnectionWithFakesHelper.connectionConfig(),
             handshakeTimeout: 0,
-            channelAllocator: allocator,
-            frameHandler: allocator,
+            channelAllocator: allocator!,
+            frameHandler: allocator!,
             delegate: delegate,
-            commandQueue: q,
+            command: q,
             waiterFactory: RMQSemaphoreWaiterFactory(),
             heartbeatSender: HeartbeatSenderSpy()
         )
@@ -141,7 +141,7 @@ class RMQConnectionTest: XCTestCase {
         let transport = ControlledInteractionTransport()
         let recovery = RecoverySpy()
         let allocator = ChannelSpyAllocator()
-        let error = NSError(domain: RMQErrorDomain, code: RMQError.ConnectionHandshakeTimedOut.rawValue,
+        let error = NSError(domain: RMQErrorDomain, code: RMQError.connectionHandshakeTimedOut.rawValue,
                             userInfo: [:])
         let conn = RMQConnection(
             transport: transport,
@@ -150,7 +150,7 @@ class RMQConnectionTest: XCTestCase {
             channelAllocator: allocator,
             frameHandler: FrameHandlerSpy(),
             delegate: ConnectionDelegateSpy(),
-            commandQueue: FakeSerialQueue(),
+            command: FakeSerialQueue(),
             waiterFactory: FakeWaiterFactory(),
             heartbeatSender: HeartbeatSenderSpy()
         )
@@ -172,7 +172,7 @@ class RMQConnectionTest: XCTestCase {
             channelAllocator: allocator,
             frameHandler: FrameHandlerSpy(),
             delegate: ConnectionDelegateSpy(),
-            commandQueue: FakeSerialQueue(),
+            command: FakeSerialQueue(),
             waiterFactory: FakeWaiterFactory(),
             heartbeatSender: HeartbeatSenderSpy()
         )
@@ -193,16 +193,16 @@ class RMQConnectionTest: XCTestCase {
                                  channelAllocator: ChannelSpyAllocator(),
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: heartbeatSender)
         conn.start()
         try! q.step()
-        transport.handshake()
+        _ = transport.handshake()
 
         heartbeatSender.signalActivityReceived = false
 
-        conn.sendFrameset(RMQFrameset(channelNumber: 1, method: MethodFixtures.channelOpen()))
+        conn.send(RMQFrameset(channelNumber: 1, method: MethodFixtures.channelOpen()))
 
         XCTAssertEqual(MethodFixtures.channelOpen(), transport.lastSentPayload() as? RMQChannelOpen)
         XCTAssert(heartbeatSender.signalActivityReceived)
@@ -219,7 +219,7 @@ class RMQConnectionTest: XCTestCase {
                                  channelAllocator: ChannelSpyAllocator(),
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: heartbeatSender)
         recovery.interval = 1
@@ -229,7 +229,7 @@ class RMQConnectionTest: XCTestCase {
 
         transport.outboundData = []
 
-        conn.sendFrameset(RMQFrameset(channelNumber: 1, method: MethodFixtures.channelOpen()))
+        conn.send(RMQFrameset(channelNumber: 1, method: MethodFixtures.channelOpen()))
 
         XCTAssertFalse(heartbeatSender.signalActivityReceived)
         XCTAssertEqual(0, transport.outboundData.count)
@@ -245,18 +245,18 @@ class RMQConnectionTest: XCTestCase {
                                  channelAllocator: ChannelSpyAllocator(),
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: HeartbeatSenderSpy())
         conn.start()
         try! q.step()
 
-        transport.serverSendsPayload(MethodFixtures.connectionStart(), channelNumber: 0)
+        _ = transport.serverSendsPayload(MethodFixtures.connectionStart(), channelNumber: 0)
 
         let parser = RMQParser(data: transport.outboundData.last!)
         let outgoingStartOk: RMQConnectionStartOk = RMQFrame(parser: parser).payload as! RMQConnectionStartOk
 
-        XCTAssert(outgoingStartOk.description.rangeOfString(TestHelper.frameworkVersion()) != nil)
+		XCTAssert(outgoingStartOk.description.range(of: TestHelper.frameworkVersion()) != nil)
     }
 
     func testSendsConfiguredVHostWithConnectionOpen() {
@@ -268,13 +268,13 @@ class RMQConnectionTest: XCTestCase {
                                  channelAllocator: ChannelSpyAllocator(),
                                  frameHandler: FrameHandlerSpy(),
                                  delegate: ConnectionDelegateSpy(),
-                                 commandQueue: q,
+                                 command: q,
                                  waiterFactory: FakeWaiterFactory(),
                                  heartbeatSender: HeartbeatSenderSpy())
         conn.start()
         try! q.step()
 
-        transport.handshake()
+        _ = transport.handshake()
 
         let parser = RMQParser(data: transport.outboundData.last!)
         let outgoingConnectionOpen: RMQConnectionOpen = RMQFrame(parser: parser).payload as! RMQConnectionOpen
